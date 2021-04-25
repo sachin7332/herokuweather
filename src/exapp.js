@@ -9,7 +9,7 @@ const port = process.env.PORT || 4000;
 // Define path
 
 const staticpath = path.join(__dirname , "../public");
-const temppath = path.join(__dirname , "/template/views");
+const temppath = path.join(__dirname , "./templates/views");
 const parpath = path.join(__dirname , "/template/partioal");
 const cspath = path.join(__dirname , "../public/scss");
 const imgpath = path.join(__dirname , "../public/images");
