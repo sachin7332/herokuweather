@@ -36,14 +36,14 @@ hbs.registerPartials(parpath);
 app.get("/" , (req , res) =>
 {
 
-    res.send("Home");
+    res.render("Home");
 });
 
 
 app.get("/weather" , (req , res) =>
 {
 
-    res.send("Weather");
+    res.render("Weather");
 });
 
 
@@ -51,14 +51,14 @@ app.get("/weather" , (req , res) =>
 app.get("/About" , (req , res) =>
 {
 
-    res.send("About");
+    res.render("About");
 });
 
 
 app.get("/contact" , (req , res) =>
 {
 
-    res.send("contact");
+    res.render("contact");
 });
 
 app.post("/contact" , async(req , res) =>
@@ -66,7 +66,7 @@ app.post("/contact" , async(req , res) =>
 try{
  const userdata = new User(req.body);
  await userdata.save();
- res.status(201).send("contact");
+ res.status(201).render("contact");
 
 }
 catch(error){
@@ -81,7 +81,7 @@ res.status(500).send(error);
 app.get("*" , (req , res) =>
 {
 
-    res.send("Error");
+    res.render("Error");
 });
 
 
